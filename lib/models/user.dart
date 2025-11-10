@@ -46,4 +46,20 @@ class User {
       age = null,
       height = null,
       weight = null;
+
+  // Constructor para crear un objeto User desde un mapa JSON (deserialización)
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+      userId: json['userId'],
+      name: json['name'],
+      email: json['email'],
+      age: json['age'],
+      height: json['height'],
+      weight: json['weight'],
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {'email': email, 'password': password};
+  }
 }
